@@ -4,6 +4,18 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 RESET='\033[0m'
 
+#Get user home if using "sudo" or "sudo su" to launch script. Terminate execution if using root account
+if [[ $HOME = "/root" ]]; then
+	if [[ $SUDO_USER != "" ]]; then 
+		REAL_HOME="/home/$SUDO_USER"
+	else
+		echo -e "${RED}It is not recommended to execute these scripts as root${RESET}"
+		exit -1
+	fi
+else	
+	REAL_HOME=$HOME
+fi
+
 #Affichage de l'aide en cas d'appel à l'option -h ou en cas de mauvaise option
 dhelp() {
 	cat << EOF
