@@ -10,7 +10,7 @@ dhelp() {
 	cat << EOF
 Usage: $0 [OPTIONS]
 
-<DESCRIPTION DU SCRIPT>
+Script to quickly install C/C++ common build tools like GCC, Ninja or CMake
 
 Options:
   -h, --help	Display this help
@@ -43,7 +43,7 @@ else
 fi
 
 #Parsing des options (-o pour les noms court, --long pour les noms long, ajouter ":" après le nom pour pouvoir ajouter un argument)
-OPTS=$(getopt -o hd --long help,debug -n'<NOM DU SCRIPT>' -- "$@")
+OPTS=$(getopt -o hd --long help,debug -n'c_c++.sh' -- "$@")
 
 #En cas d'option inexistante, appel à la fonction dhelp
 if [ $? -ne 0 ]; then
@@ -78,19 +78,19 @@ if [ $DEBUG = false ]; then
 fi
 
 #Décommenter la ligne si le script doit être exécuter en tant que root
-#checkRoot
+checkRoot
 
 #Installation
-eval "<COMMANDE D'INSTALLATION> $REDIRECT"
-eval "<COMMANDE DE VÉRIFICATION DE L'INSTALLATION> $REDIRECT"
+eval "apt install build-essentials cmake ninja-build $REDIRECT"
+eval "gcc --version $REDIRECT && ninja --version $REDIRECT && cmake --version $REDIRECT"
 
 #Récupétation du code de sortie de la commande de vérification
 exitcode=$?
 #Si code == 0 alors Succès sinon Échec (si le code de succès n'est pas 0 le changer dans le if)
 if [ $exitcode -eq 0 ]; then
-	echo -e "${GREEN}<SCRIPT> sucessfully installed${RESET}"
+	echo -e "${GREEN}C/C++ tools sucessfully installed${RESET}"
 else
-	echo -e "${RED}Error while installing <SCRIPT>${RESET}"
+	echo -e "${RED}Error while installing C/C++ tools${RESET}"
 fi
 
 #Sortie du script avec le code de sortie de la vérification pour pouvoir remonter au script appellant le statut du script.
