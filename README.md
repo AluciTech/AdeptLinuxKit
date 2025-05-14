@@ -1,7 +1,7 @@
 # AdeptLinuxKit
 
 > [!WARNING]
-> This project is in early development and is not yet ready for production use. The scripts are developed and tested on Ubuntu 22.04 LTS and Debian 12 LTS. Other distributions may work, but are not guaranteed to work. Use at your own risk.
+> This project is in early development and is not yet ready for production use. The scripts are developed and tested on Ubuntu 22.04, Ubuntu 24.04 LTS and Debian 12.x LTS. Other distributions may work, but are not guaranteed to work. Use at your own risk.
 
 ## Overview
 
