@@ -195,7 +195,7 @@ setup_pre_commit() {
     fi
 }
 
-# ── Main Execution ───────────────────────────────────────────────────────────
+# Main
 check_not_root
 
 if [ "$ENV_MANAGER" = "venv" ]; then
