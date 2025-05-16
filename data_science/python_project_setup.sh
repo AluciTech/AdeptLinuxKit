@@ -212,6 +212,8 @@ setup_pre_commit
 echo -e "${GREEN}Project successfully initialised!${RESET}"
 echo
 echo "# ----------------------------------------------------------------------"
+echo "# First time installing miniconda?"
+echo "#   source ~/.bashrc"
 echo "# Need a new dependency?"
 echo "#   poetry add <package>"
 echo "# ----------------------------------------------------------------------"
