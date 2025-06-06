@@ -39,3 +39,9 @@ AdeptLinuxKit is a collection of scripts and tools to help you build a custom ex
    ```bash
    ./data_science/python_project_setup.sh --help
    ```
+
+## License
+
+This project is licensed under the Apache License (Version 2.0).
+
+See [LICENSE](LICENSE) for details.
