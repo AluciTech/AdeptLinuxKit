@@ -11,7 +11,7 @@ RUN useradd -m -s /bin/bash Talos
 USER Talos
 
 WORKDIR /workspace
-COPY data_science/ /workspace/data_science/
-COPY dev/ /workspace/dev/
+COPY . /workspace
+
 SHELL ["/bin/bash", "-l", "-c"]
 CMD ["bash"]

@@ -1,0 +1,10 @@
+docs/
+.git
+.gitignore
+Dockerfile
+.dockerignore
+*.swp
+*.swo
+*.DS_Store
+*.log
+*.tmp
