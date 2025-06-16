@@ -37,7 +37,7 @@ AdeptLinuxKit is a collection of scripts and tools to help you build a custom ex
 4. Inside the environment, you can, for example, run:
 
    ```bash
-   ./data_science/python_project_setup.sh --help
+   ./dev/c_c++.sh --help
    ```
 
 ## License
